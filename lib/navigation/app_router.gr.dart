@@ -72,6 +72,12 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const MainTabPage(),
       );
     },
+    OnBoardingRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const OnBoardingPage(),
+      );
+    },
     ProfileRouteWidget.name: (routeData) {
       final args = routeData.argsAs<ProfileRouteWidgetArgs>(
           orElse: () => const ProfileRouteWidgetArgs());
@@ -267,6 +273,20 @@ class MainTab extends PageRouteInfo<void> {
         );
 
   static const String name = 'MainTab';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [OnBoardingPage]
+class OnBoardingRoute extends PageRouteInfo<void> {
+  const OnBoardingRoute({List<PageRouteInfo>? children})
+      : super(
+          OnBoardingRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'OnBoardingRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
