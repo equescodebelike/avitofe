@@ -1,0 +1,9 @@
+{
+  "test_title": "Test title",
+  "showcase": "Showcase",
+  "catalog": "Catalog",
+  "basket" : "Basket",
+  "favorite": "Favorite",
+  "profile": "Profile",
+  "connectionTrouble": "Connection troubles"
+}
