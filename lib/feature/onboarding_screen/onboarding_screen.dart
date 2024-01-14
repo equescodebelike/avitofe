@@ -27,27 +27,27 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     List<Widget> pages = [
-      OnboardingPage(
+      PartCard(
           text:
               "Покупайте продукты не выходя из дома или получайте бонусы за прогулку за ними.",
           controller: controller,
           onTap: () => controller.nextPage(
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeIn)),
-      OnboardingPage(
+      PartCard(
           text:
               "Удобная навигация внутри магазина не позволит вам потеряться или что то забыть.",
           controller: controller,
           onTap: () => controller.nextPage(
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeIn)),
-      OnboardingPage(
+      PartCard(
           text: "Делитесь корзиной с близкими и друзьями.",
           controller: controller,
           onTap: () => controller.nextPage(
               duration: const Duration(milliseconds: 300),
               curve: Curves.easeIn)),
-      OnboardingPage(
+      PartCard(
           text: "Приятной работы с приложением.",
           controller: controller,
           onTap: () => controller.nextPage(
@@ -126,12 +126,12 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   }
 }
 
-class OnboardingPage extends StatelessWidget {
+class PartCard extends StatelessWidget {
   final VoidCallback onTap;
   final String text;
   final PageController controller;
 
-  const OnboardingPage(
+  const PartCard(
       {Key? key,
       required this.text,
       required this.controller,
