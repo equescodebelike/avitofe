@@ -2,6 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/ui/feature/cart_page/cart_page.dart';
+import 'package:test_project/ui/feature/chat_screen/chat_screen_widget.dart';
+import 'package:test_project/ui/feature/chat_screen/chat_screen_wm.dart';
 import 'package:test_project/ui/feature/home/home.dart';
 import 'package:test_project/ui/feature/onboarding_page/onboarding_screen.dart';
 import 'package:test_project/ui/feature/test_page/test_page.dart';
@@ -26,6 +28,9 @@ class AppRouter extends _$AppRouter {
                 page: TestRouteWidget.page,
                 initial: true,
               ),
+              AutoRoute(
+                page: ChatRouteWidget.page,
+              )
             ],
           ),
           AutoRoute(

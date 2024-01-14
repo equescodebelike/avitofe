@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:test_project/res/theme/base_const.dart';
 import 'components/test_card.dart';
 import 'test_page_wm.dart';
+
 @RoutePage()
 class TestPageWidget extends ElementaryWidget<ITestPageWidgetModel> {
   const TestPageWidget({
@@ -19,7 +20,16 @@ class TestPageWidget extends ElementaryWidget<ITestPageWidgetModel> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(wm.localizations.test_title, style: titleTextStyle,),
+        title: Text(
+          wm.localizations.test_title,
+          style: titleTextStyle,
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Text('Чат'),
+        onPressed: () {
+          wm.openChat();
+        },
       ),
       body: EntityStateNotifierBuilder(
         listenableEntityState: wm.testState,
