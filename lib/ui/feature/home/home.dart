@@ -25,23 +25,23 @@ class HomePage extends StatelessWidget {
           onDestinationSelected: tabsRouter.setActiveIndex,
           destinations: [
             NavigationDestination(
-              icon: Icon(DefaultIcon.home),
+              icon: const Icon(DefaultIcon.home),
               label: localization.showcase,
             ),
             NavigationDestination(
-              icon: Icon(DefaultIcon.catalog),
+              icon: const Icon(DefaultIcon.catalog),
               label: localization.catalog,
             ),
             NavigationDestination(
-              icon: Icon(DefaultIcon.basket),
-              label: localization.basket,
+              icon: const Icon(DefaultIcon.cart),
+              label: localization.cart,
             ),
             NavigationDestination(
-              icon: Icon(DefaultIcon.favorite),
+              icon: const Icon(DefaultIcon.favorite),
               label: localization.favorite,
             ),
             NavigationDestination(
-              icon: Icon(DefaultIcon.profile),
+              icon: const Icon(DefaultIcon.profile),
               label: localization.profile,
             ),
           ],

@@ -11,7 +11,7 @@ abstract class DefaultIcon{
   //tab bar
   static const IconData home = Icons.home_outlined;
   static const IconData catalog = Icons.search;
-  static const IconData basket = Icons.shopping_basket;
+  static const IconData cart = Icons.shopping_basket;
   static const IconData favorite = Icons.favorite;
   static const IconData profile = Icons.person;
 }

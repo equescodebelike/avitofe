@@ -18,7 +18,7 @@ class App extends StatelessWidget {
 
     return MaterialApp.router(
       title: "Test app",
-      localizationsDelegates: [
+      localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,

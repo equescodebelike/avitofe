@@ -2,8 +2,8 @@ import 'dart:async';
 import 'package:test_project/domain/offer/offer.dart';
 import 'package:test_project/utils/lifecycle_component.dart';
 
-abstract class IBasketManager implements ILifecycleComponent{
-  Stream<List<Offer>> get basketSubscription;
+abstract class ICartManager implements ILifecycleComponent{
+  Stream<List<Offer>> get cartSubscription;
 
   Future<void> checkout();
 

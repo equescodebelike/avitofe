@@ -18,7 +18,7 @@ class CartPageWidget extends ElementaryWidget<ICartPageWidgetModel> {
     final TextStyle? titleTextStyle = wm.textTheme.displayLarge;
 
     return Scaffold(
-      appBar: AppBar(title: Text(wm.localizations.basket, style: titleTextStyle,),),
+      appBar: AppBar(title: Text(wm.localizations.cart, style: titleTextStyle,),),
       body: ValueListenableBuilder<List<Offer>?>(valueListenable: wm.offerList,
           builder: (BuildContext context, List<Offer>? value, Widget? child) {
             if (value == null) {
@@ -27,6 +27,7 @@ class CartPageWidget extends ElementaryWidget<ICartPageWidgetModel> {
             return ListView.separated(itemBuilder: (context, index) {
               final offer = value[index];
               OfferCard(offer: offer, onTapAdd: wm.onTapAdd,onTapRemove: wm.onTapRemove, cardTestStyle: cardTestStyle);
+              return null;
             },
                 separatorBuilder: (_, __) =>
                 const SizedBox(height: baseSeparator,),
@@ -64,7 +65,7 @@ class OfferCard extends StatelessWidget {
           ],
         ),
         Row(children: [
-          Spacer(),
+          const Spacer(),
           FilledButton(onPressed: ()=>onTapRemove(offer.id, offer.count), child: const Icon(DefaultIcon.remove)),
           Container(height: 20, width: 20, color: Colors.white, child: Text('${offer.count}'),),
           FilledButton(onPressed: ()=>onTapAdd(offer.id, offer.count), child: const Icon(DefaultIcon.add)),

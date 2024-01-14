@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'basket_service.dart';
+part of 'cart_service.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'basket_service.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
-class _BasketService implements BasketService {
-  _BasketService(
+class _CartService implements CartService {
+  _CartService(
     this._dio, {
     this.baseUrl,
   });

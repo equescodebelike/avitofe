@@ -4,6 +4,7 @@ import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:test_project/domain/test/test.dart';
+import 'package:test_project/extensions/snack_bar.dart';
 import 'package:test_project/utils/theme_extension.dart';
 import 'test_page_model.dart';
 import 'test_page_widget.dart';
@@ -38,21 +39,26 @@ class TestPageWidgetModel extends WidgetModel<TestPageWidget, TestPageModel>
   void didUpdateWidget(TestPageWidget oldWidget) {
     super.didUpdateWidget(oldWidget);
   }
+
   @override
   void dispose() {
     super.dispose();
     _testState.dispose();
   }
 
+  //TODO: используем как основу для отработки ошибок
   @override
-  void onErrorHandle(Object error) {
+  void onErrorHandle(Object error, {StackTrace? stackTrace}) {
     super.onErrorHandle(error);
     if (error is DioException &&
         (error.type == DioExceptionType.connectionTimeout ||
             error.type == DioExceptionType.receiveTimeout)) {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(localizations.connectionTrouble)));
+      context.showSnackBar(localizations.connectionTrouble);
     }
+    Error.throwWithStackTrace(
+      error,
+      stackTrace ?? StackTrace.fromString(''),
+    );
   }
 
   Future<void> _loadTestList() async {

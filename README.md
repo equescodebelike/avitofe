@@ -1,16 +1,15 @@
-# test_progect
+# em-mobui
 
-A new Flutter project.
+работа в test ветке
+main для основных сборок
+важное помечаем label'ами
+как используем паттерн на примере со страницей главное
+не забываем про Elementary CLI
+соблюдаем архитектуру
 
-## Getting Started
+Elementary
+Material3
+Retrofit + Freezed
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+НЕ ЗАБЫВАЕМ: повышать версию;
+переходить в отдельную, если делаете свою фичу без согласования;

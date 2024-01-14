@@ -1,8 +1,8 @@
 import 'package:test_project/data/dto/offer/offer_dto.dart';
 
-import '../basket_service_interface.dart';
+import '../cart_service_interface.dart';
 
-class MockBasketService implements IBasketService {
+class MockCartService implements ICartService {
   late final List<OfferDto> _offers;
 
   @override
@@ -18,7 +18,7 @@ class MockBasketService implements IBasketService {
     return _offers;
   }
 
-  MockBasketService(){
+  MockCartService(){
     _offers = _initList();
 
   }

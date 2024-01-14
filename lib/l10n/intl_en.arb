@@ -2,7 +2,7 @@
   "test_title": "Test title",
   "showcase": "Showcase",
   "catalog": "Catalog",
-  "basket" : "Basket",
+  "cart" : "Cart",
   "favorite": "Favorite",
   "profile": "Profile",
   "connectionTrouble": "Connection troubles"

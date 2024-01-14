@@ -3,6 +3,7 @@ import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
 import 'package:test_project/ui/feature/cart_page/cart_page.dart';
 import 'package:test_project/ui/feature/home/home.dart';
+import 'package:test_project/ui/feature/onboarding_page/onboarding_screen.dart';
 import 'package:test_project/ui/feature/test_page/test_page.dart';
 import 'package:test_project/ui/ui_kit/empty_page.dart';
 
@@ -12,7 +13,11 @@ part 'app_router.gr.dart';
 class AppRouter extends _$AppRouter {
   @override
   List<AutoRoute> get routes => [
-        AutoRoute(page: HomeRoute.page, initial: true, children: [
+        AutoRoute(
+          initial: true,
+          page: OnBoardingRoute.page,
+        ),
+        AutoRoute(page: HomeRoute.page, children: [
           AutoRoute(
             page: ShowCaseTab.page,
             initial: true,

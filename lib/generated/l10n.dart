@@ -80,11 +80,11 @@ class S {
     );
   }
 
-  /// `Basket`
-  String get basket {
+  /// `Cart`
+  String get cart {
     return Intl.message(
-      'Basket',
-      name: 'basket',
+      'Cart',
+      name: 'cart',
       desc: '',
       args: [],
     );

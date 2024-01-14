@@ -2,7 +2,7 @@
   "test_title": "Тестовый экран",
   "showcase": "Главная",
   "catalog": "Каталог",
-  "basket" : "Корзина",
+  "cart" : "Корзина",
   "favorite": "Избранное",
   "profile": "Профиль",
   "connectionTrouble": "Проблемы с подключением"

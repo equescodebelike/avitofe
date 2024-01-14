@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:test_project/di/app_dependency.dart';
 
@@ -8,6 +10,9 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await AppComponents().init();
-  runApp(AppDependency(app: App()));
-  await AppComponents().dispose();
+  runApp(
+    AppDependency(
+      app: App(),
+    ),
+  );
 }
