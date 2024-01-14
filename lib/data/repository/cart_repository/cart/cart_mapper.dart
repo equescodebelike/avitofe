@@ -3,8 +3,11 @@ import 'package:test_project/domain/offer/offer.dart';
 
 Offer mapCart(OfferDto dto) {
   return Offer(
-    id: dto.offerId,
-    message: dto.message,
+    id: dto.id,
+    name: dto.name,
     count: dto.count,
+    price: dto.price,
+    oldPrice: dto.oldPrice,
+    imageUrl: dto.imageUrl,
   );
 }

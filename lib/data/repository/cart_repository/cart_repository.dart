@@ -20,5 +20,4 @@ class CartRepository implements ICartRepository{
   Future<List<Offer>> checkout() {
     return _cartService.checkout().then((value)=> value.map(mapCart).toList());
   }
-
 }

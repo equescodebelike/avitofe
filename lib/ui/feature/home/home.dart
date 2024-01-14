@@ -14,8 +14,8 @@ class HomePage extends StatelessWidget {
       routes: const [
         ShowCaseTab(),
         CatalogTab(),
-        FavoriteTab(),
         CartTab(),
+        FavoriteTab(),
         ProfileTab(),
       ],
       bottomNavigationBuilder: (context, tabsRouter) {

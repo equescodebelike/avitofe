@@ -44,7 +44,7 @@ class _AppDependencyState extends State<AppDependency> {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => ValueNotifier(ThemeMode.light),
+          create: (context) => ValueNotifier(ThemeMode.dark),
         ),
         //todo provide models
         Provider(create: (context) => _testPageModel),

@@ -8,14 +8,22 @@ part of 'offer_dto.dart';
 
 _$OfferDtoImpl _$$OfferDtoImplFromJson(Map<String, dynamic> json) =>
     _$OfferDtoImpl(
-      offerId: json['offerId'] as int,
+      id: json['id'] as int,
+      name: json['name'] as String,
       count: json['count'] as int,
-      message: json['message'] as String,
+      price: Decimal.fromJson(json['price'] as String),
+      imageUrl: json['imageUrl'] as String?,
+      oldPrice: json['oldPrice'] == null
+          ? null
+          : Decimal.fromJson(json['oldPrice'] as String),
     );
 
 Map<String, dynamic> _$$OfferDtoImplToJson(_$OfferDtoImpl instance) =>
     <String, dynamic>{
-      'offerId': instance.offerId,
+      'id': instance.id,
+      'name': instance.name,
       'count': instance.count,
-      'message': instance.message,
+      'price': instance.price,
+      'imageUrl': instance.imageUrl,
+      'oldPrice': instance.oldPrice,
     };

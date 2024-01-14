@@ -18,6 +18,7 @@ class CartPageModel extends ElementaryModel {
     super.init();
     _cartSubscription =
         _cartManager.cartSubscription.listen(_cartListen);
+    //checkout();
   }
 
   @override
