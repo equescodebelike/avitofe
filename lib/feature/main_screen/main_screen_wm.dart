@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:em_mobui/app_starter/app_components.dart';
 import 'package:em_mobui/data/models/event/event_dto.dart';
+import 'package:em_mobui/navigation/app_router.dart';
 import 'package:flutter/material.dart';
 import 'main_screen_model.dart';
 import 'main_screen_widget.dart';
@@ -12,13 +14,13 @@ abstract interface class IMainScreenWidgetModel implements IWidgetModel {
   // void onTapCalendar(int id);
   // void toAddEvent();
   // void refreshList();
+  void onTapChat();
   ThemeData get theme;
 }
 
 MainScreenWidgetModel defaultMainScreenWidgetModelFactory(
     BuildContext context) {
-  return MainScreenWidgetModel(
-      MainScreenModel(AppComponents().eventService));
+  return MainScreenWidgetModel(MainScreenModel(AppComponents().eventService));
 }
 
 class MainScreenWidgetModel
@@ -34,8 +36,13 @@ class MainScreenWidgetModel
   @override
   EntityStateNotifier<List<EventDto>> get eventList => model.events;
 
-
   @override
   ThemeData get theme => Theme.of(context);
 
+  @override
+  void onTapChat() {
+    context.router.push(
+      ChatRouteWidget(),
+    );
+  }
 }

@@ -32,6 +32,17 @@ abstract class _$AppRouter extends RootStackRouter {
         child: const CatalogTabPage(),
       );
     },
+    ChatRouteWidget.name: (routeData) {
+      final args = routeData.argsAs<ChatRouteWidgetArgs>(
+          orElse: () => const ChatRouteWidgetArgs());
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: ChatScreenWidget(
+          key: args.key,
+          wmFactory: args.wmFactory,
+        ),
+      );
+    },
     FavoriteRouteWidget.name: (routeData) {
       final args = routeData.argsAs<FavoriteRouteWidgetArgs>(
           orElse: () => const FavoriteRouteWidgetArgs());
@@ -151,6 +162,47 @@ class CatalogTab extends PageRouteInfo<void> {
   static const String name = 'CatalogTab';
 
   static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [ChatScreenWidget]
+class ChatRouteWidget extends PageRouteInfo<ChatRouteWidgetArgs> {
+  ChatRouteWidget({
+    Key? key,
+    WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+            BuildContext)
+        wmFactory = defaultChatScreenWidgetModelFactory,
+    List<PageRouteInfo>? children,
+  }) : super(
+          ChatRouteWidget.name,
+          args: ChatRouteWidgetArgs(
+            key: key,
+            wmFactory: wmFactory,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'ChatRouteWidget';
+
+  static const PageInfo<ChatRouteWidgetArgs> page =
+      PageInfo<ChatRouteWidgetArgs>(name);
+}
+
+class ChatRouteWidgetArgs {
+  const ChatRouteWidgetArgs({
+    this.key,
+    this.wmFactory = defaultChatScreenWidgetModelFactory,
+  });
+
+  final Key? key;
+
+  final WidgetModel<ElementaryWidget<IWidgetModel>, ElementaryModel> Function(
+      BuildContext) wmFactory;
+
+  @override
+  String toString() {
+    return 'ChatRouteWidgetArgs{key: $key, wmFactory: $wmFactory}';
+  }
 }
 
 /// generated route for

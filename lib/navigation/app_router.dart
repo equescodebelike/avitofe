@@ -1,5 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:elementary/elementary.dart';
+import 'package:em_mobui/feature/chat_screen/chat_screen_widget.dart';
+import 'package:em_mobui/feature/chat_screen/chat_screen_wm.dart';
 import 'package:em_mobui/feature/home/home.dart';
 import 'package:em_mobui/feature/onboarding_screen/onboarding_screen.dart';
 import 'package:flutter/material.dart';
@@ -33,6 +35,10 @@ class AppRouter extends _$AppRouter {
                     initial: true,
                     path: RouterPath.mainTab,
                     page: MainRouteWidget.page),
+                AutoRoute(
+                  page: ChatRouteWidget.page,
+                  path: RouterPath.chatPage,
+                ),
               ],
             ),
             AutoRoute(

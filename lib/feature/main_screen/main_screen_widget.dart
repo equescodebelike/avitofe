@@ -14,6 +14,12 @@ class MainScreenWidget extends ElementaryWidget<IMainScreenWidgetModel> {
   Widget build(IMainScreenWidgetModel wm) {
     return Scaffold(
       appBar: AppBar(title: const Text('Главная')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          wm.onTapChat();
+        },
+        child: const Text('Чат'),
+      ),
       /* Пример взаимодействия с WidgetModel */
       // floatingActionButton: FloatingActionButton(
       //   onPressed: wm.toAddEvent,
