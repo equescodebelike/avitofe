@@ -1,28 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
+import 'package:test_project/res/theme/base_const.dart';
 
 class DefaultShimmer extends StatelessWidget {
   const DefaultShimmer({
     Key? key,
     this.width = 100,
     this.height = 100,
+    this.borderRadius = baseRadius,
   }) : super(key: key);
 
   final double width;
   final double height;
+  final double borderRadius;
 
   @override
   Widget build(BuildContext context) {
-    return Shimmer(
-      duration: const Duration(seconds: 2),
-      interval: const Duration(seconds: 2),
-      color: Colors.white,
-      colorOpacity: 1,
-      direction: const ShimmerDirection.fromLTRB(),
-      child: Container(
-        width: width,
-        height: height,
-        color: Theme.of(context).primaryColor.withOpacity(0.1),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(borderRadius),
+      child: Shimmer(
+        duration: const Duration(seconds: 2),
+        interval: const Duration(seconds: 2),
+        color: Colors.white,
+        colorOpacity: 1,
+        direction: const ShimmerDirection.fromLTRB(),
+        child: Container(
+          width: width,
+          height: height,
+          color: Theme.of(context).primaryColor.withOpacity(0.1),
+        ),
       ),
     );
   }

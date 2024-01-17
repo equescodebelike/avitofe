@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:test_project/navigation/app_router.dart';
 import 'package:test_project/ui/ui_kit/card_with_text.dart';
-import 'package:test_project/ui/ui_kit/filled_button_widget.dart';
+import 'package:test_project/ui/ui_kit/custom_filled_button.dart';
 
 @RoutePage()
 class OnBoardingPage extends StatefulWidget {

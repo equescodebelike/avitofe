@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:test_project/data/manager/cart/cart_manager_interface.dart';
 import 'package:test_project/data/repository/test_repository/test_repository.dart';
 import 'package:test_project/ui/feature/cart_page/cart_page_model.dart';
+import 'package:test_project/ui/feature/cart_page/components/offer_card/offer_card_model.dart';
 import 'package:test_project/ui/feature/test_page/test_page.dart';
 
 import 'app_components.dart';
@@ -23,6 +24,7 @@ class _AppDependencyState extends State<AppDependency> {
   //models
   late final TestPageModel _testPageModel;
   late final CartPageModel _cartPageModel;
+  late final OfferCardModel _offerCardModel;
 
   @override
   void initState() {
@@ -37,6 +39,7 @@ class _AppDependencyState extends State<AppDependency> {
     //todo init models
     _testPageModel = TestPageModel(errorHandler, testRepository);
     _cartPageModel = CartPageModel(errorHandler, cartManager);
+    _offerCardModel = OfferCardModel(errorHandler, cartManager);
   }
 
   @override
@@ -49,6 +52,7 @@ class _AppDependencyState extends State<AppDependency> {
         //todo provide models
         Provider(create: (context) => _testPageModel),
         Provider(create: (context) => _cartPageModel),
+        Provider(create: (context) => _offerCardModel),
       ],
       child: widget.app,
     );

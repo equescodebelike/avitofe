@@ -1,59 +1,6 @@
+
 import 'package:flutter/material.dart';
-import 'package:test_project/domain/offer/offer.dart';
-import 'package:test_project/res/theme/base_const.dart';
 import 'package:test_project/ui/ui_kit/default_icon.dart';
-
-class OfferCard extends StatelessWidget {
-  final Offer offer;
-  final VoidCallback onTapAdd;
-  final VoidCallback onTapRemove;
-
-  final TextStyle? cardTestStyle;
-
-  const OfferCard({
-    super.key,
-    required this.offer,
-    required this.onTapAdd,
-    required this.onTapRemove,
-    this.cardTestStyle,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(basePadding),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                Text(
-                  '${offer.id}',
-                  style: cardTestStyle,
-                ),
-                const Spacer(),
-                Text(
-                  offer.name,
-                  style: cardTestStyle,
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                const Spacer(),
-                ChangeCountWidget(
-                  onTapRemove: onTapRemove,
-                  onTapAdd: onTapAdd,
-                  count: offer.count,
-                ),
-              ],
-            )
-          ],
-        ),
-      ),
-    );
-  }
-}
 
 class ChangeCountWidget extends StatelessWidget {
   const ChangeCountWidget({
@@ -61,20 +8,25 @@ class ChangeCountWidget extends StatelessWidget {
     required this.onTapRemove,
     required this.onTapAdd,
     required this.count,
+    this.height = 50,
+    this.counterWidth = 50,
   });
 
   final VoidCallback onTapRemove;
   final VoidCallback onTapAdd;
   final int count;
+  final double height;
+  final double counterWidth;
 
   @override
   Widget build(BuildContext context) {
     final color = Theme.of(context).colorScheme.background;
     return Row(
+      mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(
-          height: 50,
-          width: 50,
+          height: height,
+          width: height,
           child: FilledButton(
             style: ButtonStyle(
               shape: MaterialStateProperty.all(
@@ -87,13 +39,13 @@ class ChangeCountWidget extends StatelessWidget {
               ),
               padding: MaterialStateProperty.all(EdgeInsets.zero),
             ),
-            onPressed: onTapRemove,
+            onPressed: count>1?onTapRemove:null,
             child: const Center(child: Icon(DefaultIcon.remove)),
           ),
         ),
         Container(
-          height: 50,
-          width: 50,
+          height: height,
+          width: counterWidth,
           color: color,
           alignment: Alignment.center,
           child: Text(
@@ -101,8 +53,8 @@ class ChangeCountWidget extends StatelessWidget {
           ),
         ),
         SizedBox(
-          height: 50,
-          width: 50,
+          height: height,
+          width: height,
           child: FilledButton(
             style: ButtonStyle(
               shape: MaterialStateProperty.all(

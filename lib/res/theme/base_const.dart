@@ -1,4 +1,4 @@
-const basePadding = 16.0;
-const baseSeparator = 8.0;
-const baseRadius = 16.0;
-const baseTagRadius = 4.0;
+const double basePadding = 16.0;
+const double baseSeparator = 8.0;
+const double baseRadius = 16.0;
+const double baseTagRadius = 4.0;
