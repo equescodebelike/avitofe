@@ -1,4 +1,4 @@
-import 'package:test_project/domain/offer/offer.dart';
+import 'package:test_project/domain/cart/models/offer/offer.dart';
 
 abstract class ICartRepository{
   Future<List<Offer>> checkout();

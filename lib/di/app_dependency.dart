@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_project/data/cart/cart_data.dart';
+import 'package:test_project/domain/cart/cart.dart';
 import 'package:test_project/ui/feature/cart_page/cart_page_model.dart';
 import 'package:test_project/ui/feature/cart_page/components/offer_card/offer_card_model.dart';
 import 'package:test_project/ui/feature/chat_screen/chat_screen.dart';

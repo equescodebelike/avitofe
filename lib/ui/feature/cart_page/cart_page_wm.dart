@@ -3,7 +3,7 @@ import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_project/domain/offer/offer.dart';
+import 'package:test_project/domain/cart/models/offer/offer.dart';
 import 'package:test_project/utils/theme_extension.dart';
 import 'cart_page_model.dart';
 import 'cart_page_widget.dart';

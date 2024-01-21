@@ -1,4 +1,4 @@
-import 'package:test_project/domain/offer/offer.dart';
+import 'package:test_project/domain/cart/models/offer/offer.dart';
 
 
 import '../service/service.dart';

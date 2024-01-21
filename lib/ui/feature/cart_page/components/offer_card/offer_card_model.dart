@@ -1,5 +1,5 @@
 import 'package:elementary/elementary.dart';
-import 'package:test_project/data/cart/cart_data.dart';
+import 'package:test_project/domain/cart/cart.dart';
 
 class OfferCardModel extends ElementaryModel {
   final ICartManager _cartManager;

@@ -1,6 +1,6 @@
 import 'package:elementary/elementary.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/domain/offer/offer.dart';
+import 'package:test_project/domain/cart/models/offer/offer.dart';
 import 'package:test_project/extensions/money_extension.dart';
 import 'package:test_project/res/theme/base_const.dart';
 import 'package:test_project/ui/ui_kit/change_count_widget.dart';

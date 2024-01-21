@@ -2,7 +2,7 @@ import 'package:auto_route/annotations.dart';
 import 'package:elementary/elementary.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:test_project/domain/offer/offer.dart';
+import 'package:test_project/domain/cart/models/offer/offer.dart';
 import 'package:test_project/res/theme/base_const.dart';
 import 'package:test_project/ui/feature/cart_page/components/offer_card/offer_card_widget.dart';
 import 'package:test_project/ui/ui_kit/custom_filled_button.dart';

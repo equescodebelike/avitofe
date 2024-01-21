@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:elementary/elementary.dart';
 import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/foundation.dart';
-import 'package:test_project/data/cart/cart_data.dart';
-import 'package:test_project/domain/offer/offer.dart';
+import 'package:test_project/domain/cart/cart.dart';
 
 class CartPageModel extends ElementaryModel {
   final ICartManager _cartManager;
