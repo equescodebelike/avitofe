@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:test_project/data/manager/cart/cart_manager_interface.dart';
-import 'package:test_project/data/repository/test_repository/test_repository.dart';
+import 'package:test_project/data/cart/cart_data.dart';
 import 'package:test_project/ui/feature/cart_page/cart_page_model.dart';
 import 'package:test_project/ui/feature/cart_page/components/offer_card/offer_card_model.dart';
 import 'package:test_project/ui/feature/chat_screen/chat_screen.dart';
 import 'package:test_project/ui/feature/test_page/test_page.dart';
 
+import 'package:test_project/data/test/test_data.dart';
 import 'app_components.dart';
 
 class AppDependency extends StatefulWidget {

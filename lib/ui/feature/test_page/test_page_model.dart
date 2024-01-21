@@ -1,5 +1,5 @@
 import 'package:elementary/elementary.dart';
-import 'package:test_project/data/repository/test_repository/test_repository.dart';
+import 'package:test_project/data/test/test_data.dart';
 import 'package:test_project/domain/test/test.dart';
 
 class TestPageModel extends ElementaryModel {

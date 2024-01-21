@@ -1,4 +1,4 @@
-import 'package:test_project/data/dto/test/test_dto.dart';
+import 'package:test_project/data/test/dto/test_dto.dart';
 
 import '../test_service_interface.dart';
 

@@ -1,6 +1,6 @@
 import 'package:decimal/decimal.dart';
-import 'package:test_project/data/dto/offer/offer_dto.dart';
 
+import '../../dto/offer/offer_dto.dart';
 import '../cart_service_interface.dart';
 
 class MockCartService implements ICartService {

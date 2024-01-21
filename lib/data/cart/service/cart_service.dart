@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:test_project/data/dto/offer/offer_dto.dart';
-
+import '../dto/offer/offer_dto.dart';
 import 'cart_service_interface.dart';
 import 'cart_url.dart';
 

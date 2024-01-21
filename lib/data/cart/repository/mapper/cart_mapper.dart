@@ -1,5 +1,6 @@
-import 'package:test_project/data/dto/offer/offer_dto.dart';
 import 'package:test_project/domain/offer/offer.dart';
+
+import '../../dto/offer/offer_dto.dart';
 
 Offer mapCart(OfferDto dto) {
   return Offer(

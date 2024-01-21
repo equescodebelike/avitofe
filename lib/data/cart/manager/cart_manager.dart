@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:rxdart/rxdart.dart';
-import 'package:test_project/data/repository/cart_repository/cart_repository_interface.dart';
+import 'package:test_project/data/cart/repository/cart_repository_interface.dart';
 import 'package:test_project/domain/offer/offer.dart';
 import 'package:test_project/utils/lifecycle_component.dart';
 

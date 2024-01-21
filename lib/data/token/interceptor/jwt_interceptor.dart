@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:test_project/data/repository/token/token_repository.dart';
+
+import '../repository/token_repository.dart';
 
 /// Interceptor for working with JWT tokens, updating and saving them.
 /// Requires [Dio] to work.

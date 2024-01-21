@@ -21,7 +21,6 @@ class TestPageWidget extends ElementaryWidget<ITestPageWidgetModel> {
       appBar: AppBar(
         title: Text(
           wm.localizations.test_title,
-          style: titleTextStyle,
         ),
       ),
       floatingActionButton: FloatingActionButton(

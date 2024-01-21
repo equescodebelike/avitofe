@@ -1,4 +1,5 @@
-import 'package:test_project/data/dto/offer/offer_dto.dart';
+
+import '../dto/offer/offer_dto.dart';
 
 abstract class ICartService{
   Future<List<OfferDto>> checkout();

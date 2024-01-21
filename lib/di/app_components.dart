@@ -2,18 +2,11 @@
 import 'package:dio/dio.dart';
 import 'package:elementary/elementary.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:test_project/data/api/interceptors/jwt_interceptor.dart';
-import 'package:test_project/data/api/service/cart/cart_service_interface.dart';
-import 'package:test_project/data/api/service/cart/mock/cart_service_mock.dart';
-import 'package:test_project/data/api/service/test/mock/test_service_mock.dart';
-import 'package:test_project/data/api/service/test/test_service_interface.dart';
-import 'package:test_project/data/manager/cart/cart_manager.dart';
-import 'package:test_project/data/manager/cart/cart_manager_interface.dart';
-import 'package:test_project/data/repository/cart_repository/cart_repository.dart';
-import 'package:test_project/data/repository/cart_repository/cart_repository_interface.dart';
-import 'package:test_project/data/repository/test_repository/test_repository.dart';
-import 'package:test_project/data/repository/token/token_repository.dart';
+import 'package:test_project/data/cart/cart_data.dart';
+import 'package:test_project/data/test/test_data.dart';
+import 'package:test_project/data/token/token_data.dart';
 import 'package:test_project/utils/error_handler.dart';
+
 
 const timeout = Duration(seconds: 30);
 
