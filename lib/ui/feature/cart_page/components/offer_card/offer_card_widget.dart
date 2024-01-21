@@ -4,7 +4,6 @@ import 'package:test_project/domain/offer/offer.dart';
 import 'package:test_project/extensions/money_extension.dart';
 import 'package:test_project/res/theme/base_const.dart';
 import 'package:test_project/ui/ui_kit/change_count_widget.dart';
-import 'package:test_project/ui/ui_kit/default_icon.dart';
 import 'package:test_project/ui/ui_kit/network_image_widget.dart';
 import 'offer_card_wm.dart';
 
@@ -45,9 +44,13 @@ class OfferCardWidget extends ElementaryWidget<IOfferCardWidgetModel> {
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Row(
+                  Text(
+                    offer.name,
+                    style: cardTextStyle,
+                  ),
+                  /*Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
@@ -68,7 +71,7 @@ class OfferCardWidget extends ElementaryWidget<IOfferCardWidgetModel> {
                         icon: const Icon(DefaultIcon.delete),
                       ),
                     ],
-                  ),
+                  ),*/
                   const Spacer(),
                   Row(
                     children: [
@@ -88,6 +91,7 @@ class OfferCardWidget extends ElementaryWidget<IOfferCardWidgetModel> {
                           return ChangeCountWidget(
                             onTapRemove: wm.onTapRemove,
                             onTapAdd: wm.onTapAdd,
+                            onTapDelete: wm.onTapDelete,
                             count: count,
                             height: 32,
                             counterWidth: 32,

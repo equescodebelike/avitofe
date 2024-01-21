@@ -7,6 +7,7 @@ class ChangeCountWidget extends StatelessWidget {
     super.key,
     required this.onTapRemove,
     required this.onTapAdd,
+    this.onTapDelete,
     required this.count,
     this.height = 50,
     this.counterWidth = 50,
@@ -14,6 +15,7 @@ class ChangeCountWidget extends StatelessWidget {
 
   final VoidCallback onTapRemove;
   final VoidCallback onTapAdd;
+  final VoidCallback? onTapDelete;
   final int count;
   final double height;
   final double counterWidth;
@@ -39,8 +41,8 @@ class ChangeCountWidget extends StatelessWidget {
               ),
               padding: MaterialStateProperty.all(EdgeInsets.zero),
             ),
-            onPressed: count>1?onTapRemove:null,
-            child: const Center(child: Icon(DefaultIcon.remove)),
+            onPressed: count>1?onTapRemove:onTapDelete,
+            child: Center(child: Icon((count <= 1 && onTapDelete!=null)?DefaultIcon.delete : DefaultIcon.remove)),
           ),
         ),
         Container(

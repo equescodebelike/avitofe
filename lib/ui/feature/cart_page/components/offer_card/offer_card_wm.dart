@@ -13,6 +13,8 @@ abstract interface class IOfferCardWidgetModel
   void onTapAdd();
 
   void onTapRemove();
+
+  void onTapDelete();
 }
 
 OfferCardWidgetModel defaultOfferCardWidgetModelFactory(BuildContext context) {
@@ -51,7 +53,11 @@ class OfferCardWidgetModel extends WidgetModel<OfferCardWidget, OfferCardModel>
     final newCount = _countState.value + 1;
     _countState.value = newCount;
     model.bulkAdd(widget.offer.id, newCount);
-      }
+  }
+  void _onTapDelete(){
+    _countState.value = 0;
+    model.bulkAdd(widget.offer.id, 0);
+  }
 
   @override
   void onTapAdd()  => _onTapAdd();
@@ -60,5 +66,8 @@ class OfferCardWidgetModel extends WidgetModel<OfferCardWidget, OfferCardModel>
   void onTapRemove() => _onTapRemove();
 
   @override
+  void onTapDelete() => _onTapDelete();
+  @override
   ValueListenable<int> get counterState => _countState;
+
 }
