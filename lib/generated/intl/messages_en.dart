@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "catalog": MessageLookupByLibrary.simpleMessage("Catalog"),
         "connectionTrouble":
             MessageLookupByLibrary.simpleMessage("Connection troubles"),
+        "createOrder": MessageLookupByLibrary.simpleMessage("Create Order"),
         "favorite": MessageLookupByLibrary.simpleMessage("Favorite"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "showcase": MessageLookupByLibrary.simpleMessage("Showcase"),

@@ -6,4 +6,5 @@ class AppColor{
   static const red = Colors.red;
   static const yellow = Colors.yellow;
   static const shimmerBlick = Colors.white;
+  static const black = Colors.black;
 }

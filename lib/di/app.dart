@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:test_project/generated/l10n.dart';
 import 'package:test_project/res/theme/app_theme.dart';
 import 'package:test_project/res/theme/color_schemes.g.dart';
+import 'package:test_project/utils/custom_scroll_behavior.dart';
 
 import '../navigation/app_router.dart';
 
@@ -17,6 +18,12 @@ class App extends StatelessWidget {
     final themeMode = context.watch<ValueNotifier<ThemeMode>>();
 
     return MaterialApp.router(
+      builder: (context, child){
+        return ScrollConfiguration(
+          behavior: CustomScrollBehavior(),
+          child: child!,
+        );
+      },
       title: "Test app",
       localizationsDelegates: const [
         S.delegate,
@@ -26,9 +33,11 @@ class App extends StatelessWidget {
       ],
       supportedLocales: S.delegate.supportedLocales,
       theme: appTheme(colorScheme: lightColorScheme),
+      darkTheme: appTheme(colorScheme: darkColorScheme),
+      // theme: appTheme(),
+      // darkTheme: appTheme(isDark: true),
       highContrastTheme: appTheme(colorScheme: hightColorScheme),
       highContrastDarkTheme: appTheme(colorScheme: hightColorScheme),
-      darkTheme: appTheme(colorScheme: darkColorScheme),
       themeMode: themeMode.value,
       routerConfig: _appRouter.config(),
     );

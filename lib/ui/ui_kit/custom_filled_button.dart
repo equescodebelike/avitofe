@@ -8,6 +8,7 @@ class CustomFilledButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final color = Theme.of(context).colorScheme.background;
     return SizedBox(
       height: 50,
       width: 360,
@@ -21,7 +22,7 @@ class CustomFilledButton extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .labelMedium
-                ?.copyWith(color: Colors.white),
+                ?.copyWith(color: color),
           ),
         ),
       ),

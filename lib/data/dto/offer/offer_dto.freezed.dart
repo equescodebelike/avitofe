@@ -20,9 +20,12 @@ OfferDto _$OfferDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$OfferDto {
-  int get offerId => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
+  Decimal get price => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  Decimal? get oldPrice => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +38,13 @@ abstract class $OfferDtoCopyWith<$Res> {
   factory $OfferDtoCopyWith(OfferDto value, $Res Function(OfferDto) then) =
       _$OfferDtoCopyWithImpl<$Res, OfferDto>;
   @useResult
-  $Res call({int offerId, int count, String message});
+  $Res call(
+      {int id,
+      String name,
+      int count,
+      Decimal price,
+      String? imageUrl,
+      Decimal? oldPrice});
 }
 
 /// @nodoc
@@ -51,23 +60,38 @@ class _$OfferDtoCopyWithImpl<$Res, $Val extends OfferDto>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offerId = null,
+    Object? id = null,
+    Object? name = null,
     Object? count = null,
-    Object? message = null,
+    Object? price = null,
+    Object? imageUrl = freezed,
+    Object? oldPrice = freezed,
   }) {
     return _then(_value.copyWith(
-      offerId: null == offerId
-          ? _value.offerId
-          : offerId // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldPrice: freezed == oldPrice
+          ? _value.oldPrice
+          : oldPrice // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
     ) as $Val);
   }
 }
@@ -80,7 +104,13 @@ abstract class _$$OfferDtoImplCopyWith<$Res>
       __$$OfferDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int offerId, int count, String message});
+  $Res call(
+      {int id,
+      String name,
+      int count,
+      Decimal price,
+      String? imageUrl,
+      Decimal? oldPrice});
 }
 
 /// @nodoc
@@ -94,23 +124,38 @@ class __$$OfferDtoImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? offerId = null,
+    Object? id = null,
+    Object? name = null,
     Object? count = null,
-    Object? message = null,
+    Object? price = null,
+    Object? imageUrl = freezed,
+    Object? oldPrice = freezed,
   }) {
     return _then(_$OfferDtoImpl(
-      offerId: null == offerId
-          ? _value.offerId
-          : offerId // ignore: cast_nullable_to_non_nullable
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
+              as String,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
-              as String,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldPrice: freezed == oldPrice
+          ? _value.oldPrice
+          : oldPrice // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
     ));
   }
 }
@@ -119,21 +164,32 @@ class __$$OfferDtoImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$OfferDtoImpl implements _OfferDto {
   const _$OfferDtoImpl(
-      {required this.offerId, required this.count, required this.message});
+      {required this.id,
+      required this.name,
+      required this.count,
+      required this.price,
+      this.imageUrl,
+      this.oldPrice});
 
   factory _$OfferDtoImpl.fromJson(Map<String, dynamic> json) =>
       _$$OfferDtoImplFromJson(json);
 
   @override
-  final int offerId;
+  final int id;
+  @override
+  final String name;
   @override
   final int count;
   @override
-  final String message;
+  final Decimal price;
+  @override
+  final String? imageUrl;
+  @override
+  final Decimal? oldPrice;
 
   @override
   String toString() {
-    return 'OfferDto(offerId: $offerId, count: $count, message: $message)';
+    return 'OfferDto(id: $id, name: $name, count: $count, price: $price, imageUrl: $imageUrl, oldPrice: $oldPrice)';
   }
 
   @override
@@ -141,14 +197,20 @@ class _$OfferDtoImpl implements _OfferDto {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$OfferDtoImpl &&
-            (identical(other.offerId, offerId) || other.offerId == offerId) &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.count, count) || other.count == count) &&
-            (identical(other.message, message) || other.message == message));
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
+            (identical(other.oldPrice, oldPrice) ||
+                other.oldPrice == oldPrice));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, offerId, count, message);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, count, price, imageUrl, oldPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -166,19 +228,28 @@ class _$OfferDtoImpl implements _OfferDto {
 
 abstract class _OfferDto implements OfferDto {
   const factory _OfferDto(
-      {required final int offerId,
+      {required final int id,
+      required final String name,
       required final int count,
-      required final String message}) = _$OfferDtoImpl;
+      required final Decimal price,
+      final String? imageUrl,
+      final Decimal? oldPrice}) = _$OfferDtoImpl;
 
   factory _OfferDto.fromJson(Map<String, dynamic> json) =
       _$OfferDtoImpl.fromJson;
 
   @override
-  int get offerId;
+  int get id;
+  @override
+  String get name;
   @override
   int get count;
   @override
-  String get message;
+  Decimal get price;
+  @override
+  String? get imageUrl;
+  @override
+  Decimal? get oldPrice;
   @override
   @JsonKey(ignore: true)
   _$$OfferDtoImplCopyWith<_$OfferDtoImpl> get copyWith =>

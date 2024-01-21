@@ -26,6 +26,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "catalog": MessageLookupByLibrary.simpleMessage("Каталог"),
         "connectionTrouble":
             MessageLookupByLibrary.simpleMessage("Проблемы с подключением"),
+        "createOrder": MessageLookupByLibrary.simpleMessage("Оформить заказ"),
         "favorite": MessageLookupByLibrary.simpleMessage("Избранное"),
         "profile": MessageLookupByLibrary.simpleMessage("Профиль"),
         "showcase": MessageLookupByLibrary.simpleMessage("Главная"),

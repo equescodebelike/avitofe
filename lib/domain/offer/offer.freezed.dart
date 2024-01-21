@@ -17,8 +17,11 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$Offer {
   int get id => throw _privateConstructorUsedError;
-  String get message => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
+  Decimal get price => throw _privateConstructorUsedError;
+  String? get imageUrl => throw _privateConstructorUsedError;
+  Decimal? get oldPrice => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $OfferCopyWith<Offer> get copyWith => throw _privateConstructorUsedError;
@@ -29,7 +32,13 @@ abstract class $OfferCopyWith<$Res> {
   factory $OfferCopyWith(Offer value, $Res Function(Offer) then) =
       _$OfferCopyWithImpl<$Res, Offer>;
   @useResult
-  $Res call({int id, String message, int count});
+  $Res call(
+      {int id,
+      String name,
+      int count,
+      Decimal price,
+      String? imageUrl,
+      Decimal? oldPrice});
 }
 
 /// @nodoc
@@ -46,22 +55,37 @@ class _$OfferCopyWithImpl<$Res, $Val extends Offer>
   @override
   $Res call({
     Object? id = null,
-    Object? message = null,
+    Object? name = null,
     Object? count = null,
+    Object? price = null,
+    Object? imageUrl = freezed,
+    Object? oldPrice = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldPrice: freezed == oldPrice
+          ? _value.oldPrice
+          : oldPrice // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
     ) as $Val);
   }
 }
@@ -73,7 +97,13 @@ abstract class _$$OfferImplCopyWith<$Res> implements $OfferCopyWith<$Res> {
       __$$OfferImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String message, int count});
+  $Res call(
+      {int id,
+      String name,
+      int count,
+      Decimal price,
+      String? imageUrl,
+      Decimal? oldPrice});
 }
 
 /// @nodoc
@@ -88,22 +118,37 @@ class __$$OfferImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? message = null,
+    Object? name = null,
     Object? count = null,
+    Object? price = null,
+    Object? imageUrl = freezed,
+    Object? oldPrice = freezed,
   }) {
     return _then(_$OfferImpl(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      message: null == message
-          ? _value.message
-          : message // ignore: cast_nullable_to_non_nullable
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       count: null == count
           ? _value.count
           : count // ignore: cast_nullable_to_non_nullable
               as int,
+      price: null == price
+          ? _value.price
+          : price // ignore: cast_nullable_to_non_nullable
+              as Decimal,
+      imageUrl: freezed == imageUrl
+          ? _value.imageUrl
+          : imageUrl // ignore: cast_nullable_to_non_nullable
+              as String?,
+      oldPrice: freezed == oldPrice
+          ? _value.oldPrice
+          : oldPrice // ignore: cast_nullable_to_non_nullable
+              as Decimal?,
     ));
   }
 }
@@ -112,18 +157,29 @@ class __$$OfferImplCopyWithImpl<$Res>
 
 class _$OfferImpl implements _Offer {
   const _$OfferImpl(
-      {required this.id, required this.message, required this.count});
+      {required this.id,
+      required this.name,
+      required this.count,
+      required this.price,
+      this.imageUrl,
+      this.oldPrice});
 
   @override
   final int id;
   @override
-  final String message;
+  final String name;
   @override
   final int count;
+  @override
+  final Decimal price;
+  @override
+  final String? imageUrl;
+  @override
+  final Decimal? oldPrice;
 
   @override
   String toString() {
-    return 'Offer(id: $id, message: $message, count: $count)';
+    return 'Offer(id: $id, name: $name, count: $count, price: $price, imageUrl: $imageUrl, oldPrice: $oldPrice)';
   }
 
   @override
@@ -132,12 +188,18 @@ class _$OfferImpl implements _Offer {
         (other.runtimeType == runtimeType &&
             other is _$OfferImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.message, message) || other.message == message) &&
-            (identical(other.count, count) || other.count == count));
+            (identical(other.name, name) || other.name == name) &&
+            (identical(other.count, count) || other.count == count) &&
+            (identical(other.price, price) || other.price == price) &&
+            (identical(other.imageUrl, imageUrl) ||
+                other.imageUrl == imageUrl) &&
+            (identical(other.oldPrice, oldPrice) ||
+                other.oldPrice == oldPrice));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, message, count);
+  int get hashCode =>
+      Object.hash(runtimeType, id, name, count, price, imageUrl, oldPrice);
 
   @JsonKey(ignore: true)
   @override
@@ -149,15 +211,24 @@ class _$OfferImpl implements _Offer {
 abstract class _Offer implements Offer {
   const factory _Offer(
       {required final int id,
-      required final String message,
-      required final int count}) = _$OfferImpl;
+      required final String name,
+      required final int count,
+      required final Decimal price,
+      final String? imageUrl,
+      final Decimal? oldPrice}) = _$OfferImpl;
 
   @override
   int get id;
   @override
-  String get message;
+  String get name;
   @override
   int get count;
+  @override
+  Decimal get price;
+  @override
+  String? get imageUrl;
+  @override
+  Decimal? get oldPrice;
   @override
   @JsonKey(ignore: true)
   _$$OfferImplCopyWith<_$OfferImpl> get copyWith =>

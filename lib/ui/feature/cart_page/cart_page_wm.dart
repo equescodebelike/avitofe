@@ -1,4 +1,5 @@
 import 'package:elementary/elementary.dart';
+import 'package:elementary_helper/elementary_helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -8,9 +9,7 @@ import 'cart_page_model.dart';
 import 'cart_page_widget.dart';
 
 abstract interface class ICartPageWidgetModel implements IWidgetModel, IThemeProvider {
-  ValueListenable<List<Offer>?> get offerList;
-  void onTapAdd(int offerId, oldCount);
-  void onTapRemove(int offerId, oldCount);
+  ValueListenable<EntityState<List<Offer>>> get offerList;
 }
 
 CartPageWidgetModel defaultCartPageWidgetModelFactory(BuildContext context) {
@@ -24,17 +23,7 @@ class CartPageWidgetModel extends WidgetModel<CartPageWidget, CartPageModel> wit
   CartPageWidgetModel(CartPageModel model) : super(model);
 
   @override
-  ValueListenable<List<Offer>?> get offerList => model.offerList;
-
-  @override
-  void onTapAdd(int offerId, oldCount) {
-    model.bulkAdd(offerId, oldCount+1);
-  }
-
-  @override
-  void onTapRemove(int offerId, oldCount) {
-    model.bulkAdd(offerId, oldCount-1);
-  }
+  ValueListenable<EntityState<List<Offer>>> get offerList => model.offerList;
 
 
 }

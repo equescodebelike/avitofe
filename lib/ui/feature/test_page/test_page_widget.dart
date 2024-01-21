@@ -16,7 +16,6 @@ class TestPageWidget extends ElementaryWidget<ITestPageWidgetModel> {
   @override
   Widget build(ITestPageWidgetModel wm) {
     final TextStyle? cardTestStyle = wm.textTheme.bodyLarge;
-    final TextStyle? titleTextStyle = wm.textTheme.displayLarge;
 
     return Scaffold(
       appBar: AppBar(

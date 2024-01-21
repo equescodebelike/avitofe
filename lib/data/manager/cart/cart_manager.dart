@@ -32,6 +32,8 @@ class CartManager  with LifecycleComponent implements ICartManager{
 
   @override
   Future<void> bulkAdd(offerId, count) async {
+    final prewList = _cartStream.value..removeWhere((element) => element.count<=0);
+    _cartStream.add(prewList);
     final newList =  await _cartRepository.bulkAdd(offerId, count);
     _cartStream.add(newList);
   }

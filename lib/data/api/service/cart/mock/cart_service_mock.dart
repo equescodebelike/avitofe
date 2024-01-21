@@ -1,3 +1,4 @@
+import 'package:decimal/decimal.dart';
 import 'package:test_project/data/dto/offer/offer_dto.dart';
 
 import '../cart_service_interface.dart';
@@ -14,32 +15,54 @@ class MockCartService implements ICartService {
 
   @override
   Future<List<OfferDto>> checkout() async {
+    _offers.removeWhere((element) => element.count <= 0);
     await Future.delayed(const Duration(seconds: 2));
     return _offers;
   }
 
-  MockCartService(){
+  MockCartService() {
     _offers = _initList();
-
   }
-  List<OfferDto>_initList(){
+
+  List<OfferDto> _initList() {
     return List.generate(
-      5,
-          (index) => OfferDto(offerId: index, message: "message $index", count: index),
+      20,
+      (index) => OfferDto(
+        id: index,
+        name: "message $index",
+        count: index,
+        price: Decimal.parse('1499.99'),
+        oldPrice: Decimal.parse('1499.99'),
+        imageUrl: index % 2 == 1
+            ? 'https://daily-motor.ru/wp-content/uploads/2021/12/650x650-1536x865.jpg'
+            : '',
+      ),
     );
   }
-  void _bulkAdd(int offerId, int count){
-    if(count <0){
-      _offers.removeWhere((element) => element.offerId == offerId);
-      return;
+
+  void _bulkAdd(int offerId, int count) {
+    if (count <= 0) {
+      _offers.removeWhere((element) => element.id == offerId);
+    } else {
+      final offerIndex = _offers.indexWhere((element) => element.id == offerId);
+
+      if (offerIndex == -1) {
+        // Элемент с offerId не найден, добавляем новый
+        _offers.add(OfferDto(
+          id: offerId,
+          count: count,
+          name: "message $offerId",
+          price: Decimal.parse('1499.99'),
+          oldPrice: Decimal.parse('1499.99'),
+          imageUrl:
+              'https://daily-motor.ru/wp-content/uploads/2021/12/650x650-1536x865.jpg',
+        ));
+      } else {
+        // Элемент с offerId найден, обновляем count
+        _offers[offerIndex] = _offers[offerIndex].copyWith(count: count);
+      }
     }
-    final offer = _offers.where((element) => (element.offerId == offerId)).map((e) => e.copyWith(count: count)).firstOrNull;
-    if (offer == null){
-      _offers.add(OfferDto(offerId: offerId, count: count, message: "message $offerId"));
-      return;
-    }
-    return;
+
+    _offers.removeWhere((element) => element.count <= 0);
   }
-
-
 }
